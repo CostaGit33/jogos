@@ -11,16 +11,16 @@
             background-color: #121212;
             color: #e0e0e0;
             margin: 0;
-            padding: 5px; /* Reduzido para menos espaço nas bordas */
+            padding: 5px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
         
         .container {
-            max-width: 1200px; /* Largura máxima um pouco menor */
+            max-width: 1200px;
             margin: auto;
             background-color: #1e1e1e;
-            border-radius: 10px;
+            border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             overflow: hidden;
         }
@@ -28,18 +28,18 @@
         header {
             background: linear-gradient(45deg, #c8102e, #a10d25);
             color: #ffffff;
-            padding: 15px; /* Reduzido */
+            padding: 15px;
             text-align: center;
         }
         
         header h1 {
             margin: 0;
-            font-size: 1.6em; /* Mais compacto */
+            font-size: 1.6em;
         }
         
         header p {
             margin: 4px 0 0;
-            font-size: 0.9em; /* Mais compacto */
+            font-size: 0.9em;
             opacity: 0.85;
         }
         
@@ -51,16 +51,16 @@
         
         .tab-button {
             flex-grow: 1;
-            padding: 12px 8px; /* Mais compacto */
+            padding: 12px 8px;
             cursor: pointer;
             background-color: transparent;
             border: none;
             color: #e0e0e0;
-            font-size: 0.9em; /* Mais compacto */
+            font-size: 0.9em;
             font-weight: 600;
             text-align: center;
             transition: background-color 0.3s, color 0.3s;
-            border-bottom: 3px solid transparent; /* Borda mais fina */
+            border-bottom: 3px solid transparent;
         }
         
         .tab-button.active {
@@ -77,7 +77,7 @@
             display: block;
         }
         
-        /* --- ESTILO DA TABELA PARA DESKTOP --- */
+        /* --- ESTILO DA TABELA (BASE PARA DESKTOP) --- */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -88,51 +88,50 @@
         }
         
         th, td {
-            padding: 12px 14px; /* Espaçamento interno reduzido */
+            padding: 12px 14px;
             text-align: left;
             border-bottom: 1px solid #3a3a3a;
         }
         
         th {
-            font-size: 0.8em; /* Cabeçalho mais discreto */
+            font-size: 0.8em;
             color: #c8102e;
             text-transform: uppercase;
         }
         
-        /* --- INFORMAÇÕES DA PARTIDA --- */
         .league-info {
             display: flex;
             align-items: center;
-            font-size: 0.85em; /* Menor */
+            font-size: 0.85em;
         }
         
         .league-logo {
-            width: 20px; /* Menor */
-            height: 20px; /* Menor */
+            width: 20px;
+            height: 20px;
             margin-right: 8px;
         }
         
         .match-teams {
-            font-weight: 600; /* Um pouco menos de peso */
-            font-size: 1em; /* Tamanho da fonte principal */
+            font-weight: 600;
+            font-size: 1em;
             color: #ffffff;
         }
         
         .match-time {
-            font-size: 0.8em; /* Menor */
+            font-size: 0.8em;
             color: #999;
             display: block;
             margin-top: 3px;
         }
         
         .analysis {
-            font-size: 0.9em; /* Análise mais compacta */
+            font-size: 0.9em;
             color: #a0a0a0;
             line-height: 1.4;
         }
         
         .rating {
-            font-size: 1.2em; /* Estrelas um pouco menores */
+            font-size: 1.2em;
             font-weight: 700;
             text-align: center;
         }
@@ -145,55 +144,69 @@
             color: #444;
         }
         
-        /* --- A MÁGICA DA RESPONSIVIDADE PARA CELULAR --- */
+        /* =================================================================== */
+        /* --- CSS RESPONSIVO PARA CELULAR (A GRANDE MUDANÇA ESTÁ AQUI) --- */
+        /* =================================================================== */
         @media screen and (max-width: 768px) {
-            body { padding: 0; } /* Remove padding do body no mobile */
-            .container { border-radius: 0; } /* Remove bordas do container */
+            
+            /* 1. Esconde o cabeçalho da tabela */
+            thead {
+                display: none;
+            }
         
-            thead { display: none; }
-            table, tbody, tr, td { display: block; width: 100%; }
+            /* 2. Transforma a tabela e o corpo em blocos */
+            table, tbody {
+                display: block;
+                width: 100%;
+            }
         
+            /* 3. Cada linha (TR) vira um "card" */
             tr {
+                display: block;
                 background-color: #2a2a2a;
-                margin-bottom: 10px; /* Menos espaço entre os cards */
+                margin: 10px 0;
                 border-radius: 8px;
                 border: 1px solid #3a3a3a;
                 overflow: hidden;
             }
             
-            /* Remove a margem do primeiro card para alinhar com o topo */
-            .tab-content.active tr:first-child {
-                margin-top: 10px;
-            }
-        
+            /* 4. Cada célula (TD) vira uma linha dentro do card */
             td {
-                padding: 10px 15px; /* Padding do card mais compacto */
-                border: none;
+                display: flex; /* USA FLEXBOX PARA ALINHAMENTO INTELIGENTE */
+                justify-content: space-between; /* Alinha o rótulo à esquerda e o conteúdo à direita */
+                align-items: center;
+                padding: 12px 15px;
                 border-bottom: 1px solid #3a3a3a;
-                text-align: right;
-                position: relative;
-                padding-left: 45%; /* Ajustado para mais espaço de conteúdo */
+                text-align: right; /* Mantém o texto do conteúdo alinhado à direita */
             }
         
-            td:last-child { border-bottom: none; }
+            td:last-child {
+                border-bottom: none;
+            }
         
+            /* 5. O rótulo (::before) agora é um item flexível */
             td::before {
                 content: attr(data-label);
-                position: absolute;
-                left: 15px;
-                width: calc(45% - 25px); /* Ajustado */
-                text-align: left;
                 font-weight: 600;
                 color: #c8102e;
                 text-transform: uppercase;
-                font-size: 0.75em; /* Rótulo menor */
+                font-size: 0.8em;
+                text-align: left;
+                margin-right: 10px; /* Espaço entre o rótulo e o conteúdo */
             }
         
+            /* 6. Ajustes específicos para o conteúdo de cada célula */
             .league-info, .match-teams, .match-time, .analysis, .rating {
-                text-align: right;
+                text-align: right; /* Garante que o conteúdo dentro da célula fique à direita */
+                flex-grow: 1; /* Permite que o conteúdo ocupe o espaço restante */
+            }
+        
+            .analysis {
+                font-size: 0.9em; /* Ajusta o tamanho da análise para melhor leitura */
+                white-space: normal; /* Garante que a análise quebre a linha corretamente */
             }
         }
-
+        
     </style>
 </head>
 <body>
@@ -373,4 +386,5 @@
 
 </body>
 </html>
+
 
