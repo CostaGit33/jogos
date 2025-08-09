@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia Extensivo de Apostas para Over 0.5 Gols</title>
     <style>
+        /* --- GERAL E TEMA --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #121212;
+            background-color: #121212; /* Fundo escuro consistente */
             color: #e0e0e0;
             margin: 0;
-            padding: 20px;
+            padding: 10px; /* Menos preenchimento em telas pequenas */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
+
         .container {
             max-width: 1400px;
             margin: auto;
@@ -20,108 +24,186 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
             overflow: hidden;
         }
+
         header {
             background: linear-gradient(45deg, #c8102e, #a10d25);
             color: #ffffff;
-            padding: 25px 30px;
+            padding: 20px;
             text-align: center;
         }
+
         header h1 {
             margin: 0;
-            font-size: 2.2em;
-            font-weight: 700;
+            font-size: 1.8em; /* Fonte ligeiramente menor para caber melhor */
         }
+
         header p {
             margin: 5px 0 0;
-            font-size: 1.1em;
+            font-size: 1em;
             opacity: 0.9;
         }
+
+        /* --- ABAS (TABS) --- */
         .tabs {
             display: flex;
             background-color: #2c2c2c;
         }
+
         .tab-button {
             flex-grow: 1;
-            padding: 15px 20px;
+            padding: 15px 10px; /* Menos preenchimento lateral */
             cursor: pointer;
             background-color: transparent;
             border: none;
             color: #e0e0e0;
-            font-size: 1.2em;
+            font-size: 1em; /* Tamanho de fonte adaptável */
             font-weight: 600;
+            text-align: center;
             transition: background-color 0.3s, color 0.3s;
             border-bottom: 4px solid transparent;
         }
-        .tab-button:hover {
-            background-color: #3a3a3a;
-        }
+
         .tab-button.active {
             color: #c8102e;
-            border-bottom: 4px solid #c8102e;
+            border-bottom-color: #c8102e;
         }
+
         .tab-content {
             display: none;
-            padding: 10px 20px 20px 20px;
+            padding: 0; /* Remove padding para a tabela ocupar todo o espaço */
         }
+
         .tab-content.active {
             display: block;
         }
+
+        /* --- ESTILO DA TABELA PARA DESKTOP --- */
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 10px;
         }
+
+        thead {
+            background-color: #252525;
+        }
+
         th, td {
             padding: 16px;
             text-align: left;
             border-bottom: 1px solid #3a3a3a;
         }
+
         th {
-            background-color: #252525;
-            font-size: 1em;
+            font-size: 0.9em;
             color: #c8102e;
             text-transform: uppercase;
-            position: sticky;
-            top: 0;
         }
-        tr:last-child th, tr:last-child td {
-            border-bottom: none;
-        }
-        tr:hover {
-            background-color: #2a2a2a;
-        }
+
+        /* --- INFORMAÇÕES DA PARTIDA --- */
         .league-info {
             display: flex;
             align-items: center;
+            font-size: 0.9em;
         }
+
         .league-logo {
-            width: 28px;
-            height: 28px;
-            margin-right: 12px;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
         }
+
         .match-teams {
-            font-weight: 600;
+            font-weight: 700;
             font-size: 1.1em;
+            color: #ffffff;
         }
+
         .match-time {
             font-size: 0.9em;
             color: #aaa;
             display: block;
+            margin-top: 4px;
         }
+
         .analysis {
             font-size: 0.95em;
             color: #b0b0b0;
             line-height: 1.5;
         }
+
         .rating {
-            font-size: 1.2em;
+            font-size: 1.4em;
             font-weight: 700;
+            text-align: center; /* Centraliza as estrelas */
         }
+
         .rating .star {
             color: #ffc107;
         }
+
         .rating .empty-star {
             color: #444;
+        }
+
+        /* --- A MÁGICA DA RESPONSIVIDADE PARA CELULAR --- */
+        /* Aplica estas regras em telas com largura máxima de 768px */
+        @media screen and (max-width: 768px) {
+            
+            /* 1. Esconde o cabeçalho da tabela tradicional */
+            thead {
+                display: none;
+            }
+
+            /* 2. Transforma a tabela, linha e célula em blocos */
+            table, tbody, tr, td {
+                display: block;
+                width: 100%;
+            }
+
+            /* 3. Estiliza cada linha (TR) como um "cartão" */
+            tr {
+                background-color: #2a2a2a;
+                margin-bottom: 15px;
+                border-radius: 8px;
+                border: 1px solid #3a3a3a;
+                overflow: hidden; /* Garante que o conteúdo respeite o border-radius */
+            }
+
+            /* 4. Ajusta o espaçamento das células e adiciona os "rótulos" */
+            td {
+                padding: 12px 15px;
+                border: none; /* Remove bordas internas */
+                border-bottom: 1px solid #3a3a3a; /* Separa os campos dentro do card */
+                text-align: right; /* Alinha o conteúdo à direita */
+                position: relative;
+                padding-left: 50%; /* Cria espaço para o rótulo */
+            }
+
+            td:last-child {
+                border-bottom: none; /* Remove a borda da última célula do card */
+            }
+
+            /* 5. Cria os rótulos usando o pseudo-elemento ::before */
+            td::before {
+                content: attr(data-label); /* Pega o texto do atributo 'data-label' */
+                position: absolute;
+                left: 15px;
+                width: calc(50% - 30px);
+                text-align: left;
+                font-weight: 600;
+                color: #c8102e; /* Cor de destaque para o rótulo */
+                text-transform: uppercase;
+                font-size: 0.8em;
+            }
+
+            /* 6. Ajustes finos para melhor visualização */
+            .league-info, .match-teams, .match-time, .analysis {
+                text-align: right; /* Garante alinhamento consistente */
+            }
+
+            .rating {
+                text-align: right; /* Alinha as estrelas à direita no celular */
+            }
         }
     </style>
 </head>
@@ -226,7 +308,7 @@
                 { liga: "Championship (Inglaterra )", logo: "https://i.imgur.com/v03A4kS.png", horario: "11:00", partida: "Sunderland x QPR", analise: "Sunderland tem uma torcida apaixonada que empurra o time. QPR é um visitante irregular.", over_ht: 1, over_ft: 3 },
                 { liga: "2. Bundesliga (Alemanha )", logo: "https://i.imgur.com/mGZ03b1.png", horario: "08:30", partida: "Nürnberg x Hannover 96", analise: "Mais um jogo da segunda divisão alemã com alto potencial de gols.", over_ht: 2, over_ft: 3 },
                 { liga: "Pro League (Bélgica )", logo: "https://i.imgur.com/OUMv3bL.png", horario: "11:00", partida: "Royal Antwerp x Kortrijk", analise: "Antwerp, time de ponta, joga em casa contra um adversário mais fraco.", over_ht: 2, over_ft: 3 },
-                { liga: "Super League (Suíça)", logo: "https://i.imgur.com/rO9eY5E.png", horario: "11:30", partida: "Lausanne-Sport x St. Gallen", analise: "St. Gallen tem um dos ataques mais potentes da Suíça. Lausanne, em casa, também marca.", over_ht: 2, over_ft: 3 },
+                { liga: "Super League (Suíça )", logo: "https://i.imgur.com/rO9eY5E.png", horario: "11:30", partida: "Lausanne-Sport x St. Gallen", analise: "St. Gallen tem um dos ataques mais potentes da Suíça. Lausanne, em casa, também marca.", over_ht: 2, over_ft: 3 },
                 { liga: "Superliga (Dinamarca )", logo: "https://i.imgur.com/xXQ8x1B.png", horario: "11:00", partida: "Viborg x Randers", analise: "Confronto de meio de tabela na Dinamarca. Jogos assim costumam ser mais abertos.", over_ht: 1, over_ft: 3 },
                 { liga: "Allsvenskan (Suécia )", logo: "https://i.imgur.com/sMABg6f.png", horario: "12:30", partida: "Häcken x Kalmar", analise: "Häcken é uma força ofensiva na Suécia, especialmente em casa.", over_ht: 2, over_ft: 3 },
                 { liga: "Brasileirão Série C", logo: "https://i.imgur.com/fT23b3H.png", horario: "19:00", partida: "Botafogo-PB x São Bernardo", analise: "Jogo decisivo na Série C. A necessidade da vitória pode forçar os times ao ataque.", over_ht: 1, over_ft: 2 },
@@ -249,27 +331,29 @@
         // Função para gerar o HTML da tabela
         function gerarTabela(dia) {
             const dadosDoDia = jogos[dia];
-            // Ordena os jogos pela maior pontuação de Over 0.5 HT
+            // Ordena os jogos pela maior pontuação de Over 0.5 HT e depois FT
             dadosDoDia.sort((a, b) => b.over_ht - a.over_ht || b.over_ft - a.over_ft);
             
-            let html = '<table><thead><tr><th>Liga</th><th>Partida e Horário</th><th>Análise Focada</th><th>Potencial Over 0.5 HT</th><th>Potencial Over 0.5 FT</th></tr></thead><tbody>';
+            let html = '<table><thead><tr><th>Liga</th><th>Partida</th><th>Análise Focada</th><th>Over 0.5 HT</th><th>Over 0.5 FT</th></tr></thead><tbody>';
             
             dadosDoDia.forEach(jogo => {
                 html += `
                     <tr>
-                        <td>
+                        <td data-label="Liga">
                             <div class="league-info">
                                 <img src="${jogo.logo}" alt="${jogo.liga}" class="league-logo">
                                 <span>${jogo.liga}</span>
                             </div>
                         </td>
-                        <td>
+                        <td data-label="Partida">
                             <div class="match-teams">${jogo.partida}</div>
                             <span class="match-time">${jogo.horario} (Horário de Brasília)</span>
                         </td>
-                        <td class="analysis">${jogo.analise}</td>
-                        <td>${gerarRating(jogo.over_ht)}</td>
-                        <td>${gerarRating(jogo.over_ft)}</td>
+                        <td data-label="Análise">
+                            <div class="analysis">${jogo.analise}</div>
+                        </td>
+                        <td data-label="Over 0.5 HT">${gerarRating(jogo.over_ht)}</td>
+                        <td data-label="Over 0.5 FT">${gerarRating(jogo.over_ft)}</td>
                     </tr>
                 `;
             });
@@ -299,4 +383,3 @@
 
 </body>
 </html>
-
