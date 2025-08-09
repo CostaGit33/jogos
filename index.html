@@ -8,203 +8,192 @@
         /* --- GERAL E TEMA --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background-color: #121212; /* Fundo escuro consistente */
+            background-color: #121212;
             color: #e0e0e0;
             margin: 0;
-            padding: 10px; /* Menos preenchimento em telas pequenas */
+            padding: 5px; /* Reduzido para menos espaço nas bordas */
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
+        
         .container {
-            max-width: 1400px;
+            max-width: 1200px; /* Largura máxima um pouco menor */
             margin: auto;
             background-color: #1e1e1e;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
             overflow: hidden;
         }
-
+        
         header {
             background: linear-gradient(45deg, #c8102e, #a10d25);
             color: #ffffff;
-            padding: 20px;
+            padding: 15px; /* Reduzido */
             text-align: center;
         }
-
+        
         header h1 {
             margin: 0;
-            font-size: 1.8em; /* Fonte ligeiramente menor para caber melhor */
+            font-size: 1.6em; /* Mais compacto */
         }
-
+        
         header p {
-            margin: 5px 0 0;
-            font-size: 1em;
-            opacity: 0.9;
+            margin: 4px 0 0;
+            font-size: 0.9em; /* Mais compacto */
+            opacity: 0.85;
         }
-
+        
         /* --- ABAS (TABS) --- */
         .tabs {
             display: flex;
             background-color: #2c2c2c;
         }
-
+        
         .tab-button {
             flex-grow: 1;
-            padding: 15px 10px; /* Menos preenchimento lateral */
+            padding: 12px 8px; /* Mais compacto */
             cursor: pointer;
             background-color: transparent;
             border: none;
             color: #e0e0e0;
-            font-size: 1em; /* Tamanho de fonte adaptável */
+            font-size: 0.9em; /* Mais compacto */
             font-weight: 600;
             text-align: center;
             transition: background-color 0.3s, color 0.3s;
-            border-bottom: 4px solid transparent;
+            border-bottom: 3px solid transparent; /* Borda mais fina */
         }
-
+        
         .tab-button.active {
             color: #c8102e;
             border-bottom-color: #c8102e;
         }
-
+        
         .tab-content {
             display: none;
-            padding: 0; /* Remove padding para a tabela ocupar todo o espaço */
+            padding: 0;
         }
-
+        
         .tab-content.active {
             display: block;
         }
-
+        
         /* --- ESTILO DA TABELA PARA DESKTOP --- */
         table {
             width: 100%;
             border-collapse: collapse;
         }
-
+        
         thead {
             background-color: #252525;
         }
-
+        
         th, td {
-            padding: 16px;
+            padding: 12px 14px; /* Espaçamento interno reduzido */
             text-align: left;
             border-bottom: 1px solid #3a3a3a;
         }
-
+        
         th {
-            font-size: 0.9em;
+            font-size: 0.8em; /* Cabeçalho mais discreto */
             color: #c8102e;
             text-transform: uppercase;
         }
-
+        
         /* --- INFORMAÇÕES DA PARTIDA --- */
         .league-info {
             display: flex;
             align-items: center;
-            font-size: 0.9em;
+            font-size: 0.85em; /* Menor */
         }
-
+        
         .league-logo {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
+            width: 20px; /* Menor */
+            height: 20px; /* Menor */
+            margin-right: 8px;
         }
-
+        
         .match-teams {
-            font-weight: 700;
-            font-size: 1.1em;
+            font-weight: 600; /* Um pouco menos de peso */
+            font-size: 1em; /* Tamanho da fonte principal */
             color: #ffffff;
         }
-
+        
         .match-time {
-            font-size: 0.9em;
-            color: #aaa;
+            font-size: 0.8em; /* Menor */
+            color: #999;
             display: block;
-            margin-top: 4px;
+            margin-top: 3px;
         }
-
+        
         .analysis {
-            font-size: 0.95em;
-            color: #b0b0b0;
-            line-height: 1.5;
+            font-size: 0.9em; /* Análise mais compacta */
+            color: #a0a0a0;
+            line-height: 1.4;
         }
-
+        
         .rating {
-            font-size: 1.4em;
+            font-size: 1.2em; /* Estrelas um pouco menores */
             font-weight: 700;
-            text-align: center; /* Centraliza as estrelas */
+            text-align: center;
         }
-
+        
         .rating .star {
             color: #ffc107;
         }
-
+        
         .rating .empty-star {
             color: #444;
         }
-
+        
         /* --- A MÁGICA DA RESPONSIVIDADE PARA CELULAR --- */
-        /* Aplica estas regras em telas com largura máxima de 768px */
         @media screen and (max-width: 768px) {
-            
-            /* 1. Esconde o cabeçalho da tabela tradicional */
-            thead {
-                display: none;
-            }
-
-            /* 2. Transforma a tabela, linha e célula em blocos */
-            table, tbody, tr, td {
-                display: block;
-                width: 100%;
-            }
-
-            /* 3. Estiliza cada linha (TR) como um "cartão" */
+            body { padding: 0; } /* Remove padding do body no mobile */
+            .container { border-radius: 0; } /* Remove bordas do container */
+        
+            thead { display: none; }
+            table, tbody, tr, td { display: block; width: 100%; }
+        
             tr {
                 background-color: #2a2a2a;
-                margin-bottom: 15px;
+                margin-bottom: 10px; /* Menos espaço entre os cards */
                 border-radius: 8px;
                 border: 1px solid #3a3a3a;
-                overflow: hidden; /* Garante que o conteúdo respeite o border-radius */
+                overflow: hidden;
             }
-
-            /* 4. Ajusta o espaçamento das células e adiciona os "rótulos" */
+            
+            /* Remove a margem do primeiro card para alinhar com o topo */
+            .tab-content.active tr:first-child {
+                margin-top: 10px;
+            }
+        
             td {
-                padding: 12px 15px;
-                border: none; /* Remove bordas internas */
-                border-bottom: 1px solid #3a3a3a; /* Separa os campos dentro do card */
-                text-align: right; /* Alinha o conteúdo à direita */
+                padding: 10px 15px; /* Padding do card mais compacto */
+                border: none;
+                border-bottom: 1px solid #3a3a3a;
+                text-align: right;
                 position: relative;
-                padding-left: 50%; /* Cria espaço para o rótulo */
+                padding-left: 45%; /* Ajustado para mais espaço de conteúdo */
             }
-
-            td:last-child {
-                border-bottom: none; /* Remove a borda da última célula do card */
-            }
-
-            /* 5. Cria os rótulos usando o pseudo-elemento ::before */
+        
+            td:last-child { border-bottom: none; }
+        
             td::before {
-                content: attr(data-label); /* Pega o texto do atributo 'data-label' */
+                content: attr(data-label);
                 position: absolute;
                 left: 15px;
-                width: calc(50% - 30px);
+                width: calc(45% - 25px); /* Ajustado */
                 text-align: left;
                 font-weight: 600;
-                color: #c8102e; /* Cor de destaque para o rótulo */
+                color: #c8102e;
                 text-transform: uppercase;
-                font-size: 0.8em;
+                font-size: 0.75em; /* Rótulo menor */
             }
-
-            /* 6. Ajustes finos para melhor visualização */
-            .league-info, .match-teams, .match-time, .analysis {
-                text-align: right; /* Garante alinhamento consistente */
-            }
-
-            .rating {
-                text-align: right; /* Alinha as estrelas à direita no celular */
+        
+            .league-info, .match-teams, .match-time, .analysis, .rating {
+                text-align: right;
             }
         }
+
     </style>
 </head>
 <body>
@@ -384,3 +373,4 @@
 
 </body>
 </html>
+
