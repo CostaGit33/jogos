@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia Extensivo de Apostas para Over 0.5 Gols</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #121212;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1400px;
+            margin: auto;
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+        }
+        header {
+            background: linear-gradient(45deg, #c8102e, #a10d25);
+            color: #ffffff;
+            padding: 25px 30px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+            font-weight: 700;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        .tabs {
+            display: flex;
+            background-color: #2c2c2c;
+        }
+        .tab-button {
+            flex-grow: 1;
+            padding: 15px 20px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            color: #e0e0e0;
+            font-size: 1.2em;
+            font-weight: 600;
+            transition: background-color 0.3s, color 0.3s;
+            border-bottom: 4px solid transparent;
+        }
+        .tab-button:hover {
+            background-color: #3a3a3a;
+        }
+        .tab-button.active {
+            color: #c8102e;
+            border-bottom: 4px solid #c8102e;
+        }
+        .tab-content {
+            display: none;
+            padding: 10px 20px 20px 20px;
+        }
+        .tab-content.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid #3a3a3a;
+        }
+        th {
+            background-color: #252525;
+            font-size: 1em;
+            color: #c8102e;
+            text-transform: uppercase;
+            position: sticky;
+            top: 0;
+        }
+        tr:last-child th, tr:last-child td {
+            border-bottom: none;
+        }
+        tr:hover {
+            background-color: #2a2a2a;
+        }
+        .league-info {
+            display: flex;
+            align-items: center;
+        }
+        .league-logo {
+            width: 28px;
+            height: 28px;
+            margin-right: 12px;
+        }
+        .match-teams {
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        .match-time {
+            font-size: 0.9em;
+            color: #aaa;
+            display: block;
+        }
+        .analysis {
+            font-size: 0.95em;
+            color: #b0b0b0;
+            line-height: 1.5;
+        }
+        .rating {
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        .rating .star {
+            color: #ffc107;
+        }
+        .rating .empty-star {
+            color: #444;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Guia Extensivo de Apostas (80 Jogos)</h1>
+            <p>Análise Focada em Over 0.5 Gols para 09 e 10 de Agosto de 2025</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('sabado')">Sábado, 09 de Agosto (40 Jogos)</button>
+            <button class="tab-button" onclick="showTab('domingo')">Domingo, 10 de Agosto (40 Jogos)</button>
+        </div>
+
+        <div id="sabado" class="tab-content active">
+            <!-- Tabela de Sábado será inserida aqui -->
+        </div>
+
+        <div id="domingo" class="tab-content">
+            <!-- Tabela de Domingo será inserida aqui -->
+        </div>
+    </div>
+
+    <script>
+        const jogos = {
+            sabado: [
+                // Jogos da Manhã (Ásia/Europa)
+                { liga: "J-League (Japão)", logo: "https://i.imgur.com/YdD5C9S.png", horario: "07:00", partida: "Kawasaki Frontale x Yokohama F. Marinos", analise: "Clássico de times ultra ofensivos. Um dos melhores jogos da Ásia para gols.", over_ht: 3, over_ft: 3 },
+                { liga: "K-League (Coreia do Sul )", logo: "https://i.imgur.com/1g5v5zF.png", horario: "07:30", partida: "Ulsan Hyundai x Jeonbuk Motors", analise: "Confronto dos gigantes coreanos. Ambos têm ataques poderosos e costumam marcar.", over_ht: 2, over_ft: 3 },
+                { liga: "Premiership (Escócia )", logo: "https://i.imgur.com/y8j5ZgY.png", horario: "08:30", partida: "Celtic x Aberdeen", analise: "Celtic em casa é uma máquina. Costuma pressionar desde o início e resolver o jogo cedo.", over_ht: 3, over_ft: 3 },
+                { liga: "Championship (Inglaterra )", logo: "https://i.imgur.com/v03A4kS.png", horario: "08:30", partida: "Norwich x Watford", analise: "Dois times que buscam o acesso. A Championship é conhecida por jogos abertos e com gols.", over_ht: 2, over_ft: 3 },
+                { liga: "2. Bundesliga (Alemanha )", logo: "https://i.imgur.com/mGZ03b1.png", horario: "08:30", partida: "Hamburgo x Schalke 04", analise: "Clássico de gigantes na segunda divisão. Ambos precisam vencer e têm ataques fortes.", over_ht: 2, over_ft: 3 },
+                { liga: "Superliga (Dinamarca )", logo: "https://i.imgur.com/xXQ8x1B.png", horario: "09:00", partida: "FC Copenhagen x Brondby", analise: "O maior clássico da Dinamarca. Rivalidade intensa e jogos que costumam ser abertos.", over_ht: 2, over_ft: 3 },
+                { liga: "Allsvenskan (Suécia )", logo: "https://i.imgur.com/sMABg6f.png", horario: "10:00", partida: "Djurgarden x Hammarby", analise: "Clássico de Estocolmo. Ambas as equipes têm um estilo de jogo ofensivo.", over_ht: 2, over_ft: 3 },
+                // Jogos da Tarde (Europa )
+                { liga: "Ligue 1 (França)", logo: "https://i.imgur.com/nJz15rA.png", horario: "12:00", partida: "Nice x Auxerre", analise: "Nice estreia em casa e deve pressionar o time recém-promovido desde o início.", over_ht: 2, over_ft: 3 },
+                { liga: "Championship (Inglaterra )", logo: "https://i.imgur.com/v03A4kS.png", horario: "11:00", partida: "Sheffield Wednesday x Burnley", analise: "Burnley, com estilo ofensivo, enfrenta um time que precisa se impor em casa.", over_ht: 2, over_ft: 3 },
+                { liga: "Liga Portugal", logo: "https://i.imgur.com/1G2S53v.png", horario: "11:30", partida: "Braga x Famalicão", analise: "Braga é a quarta força de Portugal e muito forte em casa. Jogo com tendência a gols.", over_ht: 2, over_ft: 3 },
+                { liga: "Eredivisie (Holanda )", logo: "https://i.imgur.com/n3JmY4i.png", horario: "11:30", partida: "FC Utrecht x Go Ahead Eagles", analise: "Jogo da Eredivisie. A probabilidade de o placar não ficar no zero é sempre alta.", over_ht: 2, over_ft: 3 },
+                { liga: "Pro League (Bélgica )", logo: "https://i.imgur.com/OUMv3bL.png", horario: "11:00", partida: "Genk x Charleroi", analise: "Genk tem um dos melhores ataques da Bélgica. Jogo em casa é sinônimo de pressão.", over_ht: 2, over_ft: 3 },
+                { liga: "Super League (Suíça )", logo: "https://i.imgur.com/rO9eY5E.png", horario: "13:00", partida: "Young Boys x Grasshoppers", analise: "Young Boys é dominante na Suíça. Jogos em casa costumam ter muitos gols.", over_ht: 3, over_ft: 3 },
+                { liga: "Eredivisie (Holanda )", logo: "https://i.imgur.com/n3JmY4i.png", horario: "15:00", partida: "PSV x RKC Waalwijk", analise: "PSV em casa contra um time mais fraco é um cenário clássico para gols no início.", over_ht: 3, over_ft: 3 },
+                { liga: "Ligue 1 (França )", logo: "https://i.imgur.com/nJz15rA.png", horario: "16:00", partida: "PSG x Le Havre", analise: "Estreia do PSG. Vitória convincente em casa é esperada. Gol no primeiro tempo é quase uma obrigação.", over_ht: 3, over_ft: 3 },
+                { liga: "Liga Portugal", logo: "https://i.imgur.com/1G2S53v.png", horario: "16:30", partida: "Sporting x Rio Ave", analise: "O ataque do Sporting é letal. A estreia em casa favorece um início de jogo forte.", over_ht: 2, over_ft: 3 },
+                { liga: "Pro League (Bélgica )", logo: "https://i.imgur.com/OUMv3bL.png", horario: "15:45", partida: "Club Brugge x Mechelen", analise: "Club Brugge tem um ataque poderoso e costuma marcar em casa.", over_ht: 2, over_ft: 3 },
+                { liga: "Super Lig (Turquia )", logo: "https://i.imgur.com/2mZ2Y2u.png", horario: "15:45", partida: "Galatasaray x Kayserispor", analise: "A pressão da torcida do Galatasaray empurra o time para cima desde o primeiro minuto.", over_ht: 2, over_ft: 3 },
+                // Jogos da Noite (Américas )
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "16:00", partida: "Criciúma x Grêmio", analise: "Grêmio tem um bom ataque, mas uma defesa que cede gols. Criciúma marca em casa.", over_ht: 1, over_ft: 3 },
+                { liga: "Brasileirão Série B", logo: "https://i.imgur.com/CMp5aA2.png", horario: "17:00", partida: "Sport x Goiás", analise: "Confronto direto pelo G-4. Ambos precisam vencer, o que pode abrir o jogo.", over_ht: 1, over_ft: 2 },
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "18:30", partida: "Internacional x Cuiabá", analise: "Inter pressionando no Beira-Rio. A insistência deve furar a defesa do Cuiabá.", over_ht: 1, over_ft: 3 },
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "18:30", partida: "Fortaleza x Juventude", analise: "Fortaleza é muito ofensivo no Castelão. A chance de gol no primeiro tempo é considerável.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série B", logo: "https://i.imgur.com/CMp5aA2.png", horario: "19:00", partida: "Coritiba x Guarani", analise: "Coritiba precisa vencer em casa para buscar o acesso. Tendência de pressão inicial.", over_ht: 1, over_ft: 3 },
+                { liga: "Superliga (Argentina )", logo: "https://i.imgur.com/NqfJ2gK.png", horario: "20:00", partida: "Independiente x Vélez Sarsfield", analise: "Clássico que pode ser aberto pela necessidade de vitória de ambos.", over_ht: 1, over_ft: 2 },
+                { liga: "MLS (EUA )", logo: "https://i.imgur.com/S0g4a2v.png", horario: "20:30", partida: "Inter Miami x Nashville SC", analise: "Com Messi, Suárez e companhia, o gol do Inter Miami é uma questão de tempo.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "21:00", partida: "Flamengo x Mirassol", analise: "Flamengo no Maracanã é uma máquina. Pressão inicial imensa sobre o Mirassol.", over_ht: 3, over_ft: 3 },
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "21:00", partida: "São Paulo x Vitória", analise: "São Paulo no Morumbi deve se impor. Vitória tem uma das piores defesas como visitante.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série B", logo: "https://i.imgur.com/CMp5aA2.png", horario: "21:00", partida: "Santos x Ceará", analise: "Santos precisa vencer na Vila. A qualidade do ataque deve superar a defesa do Ceará.", over_ht: 1, over_ft: 3 },
+                { liga: "MLS (EUA )", logo: "https://i.imgur.com/S0g4a2v.png", horario: "23:30", partida: "Los Angeles FC x Seattle Sounders", analise: "Jogos do LAFC em casa são garantia de entretenimento e gols. A MLS é perfeita para este mercado.", over_ht: 2, over_ft: 3 },
+                { liga: "Liga MX (México )", logo: "https://i.imgur.com/PzL5vAN.png", horario: "22:00", partida: "América x Tigres", analise: "Clássico mexicano entre dois dos melhores ataques do país. Jogo com enorme potencial de gols.", over_ht: 2, over_ft: 3 },
+                { liga: "J-League (Japão )", logo: "https://i.imgur.com/YdD5C9S.png", horario: "07:00", partida: "Cerezo Osaka x Kashima Antlers", analise: "Ambos os times estão na parte de cima da tabela e têm ataques eficientes.", over_ht: 2, over_ft: 3 },
+                { liga: "2. Bundesliga (Alemanha )", logo: "https://i.imgur.com/mGZ03b1.png", horario: "08:30", partida: "Fortuna Düsseldorf x Karlsruher", analise: "A segunda divisão alemã é uma das melhores ligas para o mercado de gols.", over_ht: 2, over_ft: 3 },
+                { liga: "Championship (Inglaterra )", logo: "https://i.imgur.com/v03A4kS.png", horario: "11:00", partida: "Middlesbrough x Coventry", analise: "Dois times que jogam para frente, buscando o acesso à Premier League.", over_ht: 2, over_ft: 3 },
+                { liga: "Superliga (Dinamarca )", logo: "https://i.imgur.com/xXQ8x1B.png", horario: "10:00", partida: "Midtjylland x Nordsjaelland", analise: "Nordsjaelland tem um dos ataques mais prolíficos da liga. Midtjylland é forte em casa.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série C", logo: "https://i.imgur.com/fT23b3H.png", horario: "19:00", partida: "Athletic Club x Ferroviária", analise: "Confronto de topo na Série C. Ambos os times precisam da vitória na fase final.", over_ht: 1, over_ft: 2 },
+                { liga: "Brasileirão Série B", logo: "https://i.imgur.com/CMp5aA2.png", horario: "17:00", partida: "Ponte Preta x Paysandu", analise: "Ponte Preta precisa vencer em casa para se afastar do Z4. Paysandu tem uma defesa frágil.", over_ht: 1, over_ft: 2 },
+                { liga: "MLS (EUA )", logo: "https://i.imgur.com/S0g4a2v.png", horario: "21:30", partida: "FC Dallas x Austin FC", analise: "Clássico texano. Jogos da MLS raramente terminam 0x0.", over_ht: 2, over_ft: 3 },
+                { liga: "Liga MX (México )", logo: "https://i.imgur.com/PzL5vAN.png", horario: "20:00", partida: "Chivas Guadalajara x Pumas", analise: "Dois times de grande torcida que jogam para frente. Chivas em casa é forte.", over_ht: 1, over_ft: 3 },
+                { liga: "Super League (Suíça )", logo: "https://i.imgur.com/rO9eY5E.png", horario: "15:30", partida: "FC Zurich x Lugano", analise: "A liga suíça tem uma alta média de gols. Jogo entre times da parte de cima da tabela.", over_ht: 2, over_ft: 3 },
+                { liga: "Allsvenskan (Suécia )", logo: "https://i.imgur.com/sMABg6f.png", horario: "12:30", partida: "IFK Göteborg x Elfsborg", analise: "Elfsborg tem um dos melhores ataques da Suécia. Göteborg precisa vencer em casa.", over_ht: 2, over_ft: 3 },
+            ],
+            domingo: [
+                { liga: "Eredivisie (Holanda )", logo: "https://i.imgur.com/n3JmY4i.png", horario: "07:15", partida: "AZ Alkmaar x Twente", analise: "Confronto direto na parte de cima da tabela da Eredivisie. Jogo com altíssimo potencial de gols.", over_ht: 3, over_ft: 3 },
+                { liga: "Eredivisie (Holanda )", logo: "https://i.imgur.com/n3JmY4i.png", horario: "09:30", partida: "Ajax x Heerenveen", analise: "Ajax em Amsterdã é uma máquina ofensiva. Cenário perfeito para Over 0.5 HT.", over_ht: 3, over_ft: 3 },
+                { liga: "Eliteserien (Noruega )", logo: "https://i.imgur.com/J3hW8vG.png", horario: "14:00", partida: "Bodø/Glimt x Molde", analise: "O melhor jogo da Noruega. Confronto direto pelo título entre duas equipes ultra ofensivas.", over_ht: 3, over_ft: 3 },
+                { liga: "Liga Portugal", logo: "https://i.imgur.com/1G2S53v.png", horario: "16:30", partida: "Benfica x Estrela da Amadora", analise: "Estreia do Benfica na Luz. Espera-se uma vitória convincente e gol cedo.", over_ht: 3, over_ft: 3 },
+                { liga: "Eredivisie (Holanda )", logo: "https://i.imgur.com/n3JmY4i.png", horario: "11:45", partida: "Feyenoord x Willem II", analise: "Gigante holandês jogando em casa. Cenário muito favorável para gols, especialmente no HT.", over_ht: 3, over_ft: 3 },
+                { liga: "Super Lig (Turquia )", logo: "https://i.imgur.com/2mZ2Y2u.png", horario: "15:45", partida: "Fenerbahçe x Adana Demirspor", analise: "Fenerbahçe em casa é muito forte. Adana também tem um bom ataque. Jogo aberto com grande potencial para gols de ambos os lados.", over_ht: 2, over_ft: 3 },
+                { liga: "Superliga (Argentina )", logo: "https://i.imgur.com/NqfJ2gK.png", horario: "20:30", partida: "River Plate x Racing Club", analise: "Grande clássico com o River Plate em fase espetacular. O time de Demichelis é ofensivo e costuma marcar no Monumental.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "11:00", partida: "Atlético-GO x Botafogo", analise: "Ambos os times precisam do resultado e têm ataques competentes. Jogo no horário da manhã costuma ser mais aberto.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "18:30", partida: "Palmeiras x Ceará", analise: "O volume de jogo do Palmeiras em casa é imenso. A pressão constante sobre o Ceará deve resultar em gol.", over_ht: 2, over_ft: 3 },
+                { liga: "Liga Portugal", logo: "https://i.imgur.com/1G2S53v.png", horario: "18:00", partida: "Porto x Arouca", analise: "Porto no Dragão é sempre uma força ofensiva. A probabilidade de marcarem no HT é alta.", over_ht: 2, over_ft: 3 },
+                { liga: "Pro League (Bélgica )", logo: "https://i.imgur.com/OUMv3bL.png", horario: "13:30", partida: "Anderlecht x St. Truiden", analise: "Anderlecht joga em casa com a obrigação da vitória. Pressão inicial para marcar.", over_ht: 2, over_ft: 3 },
+                { liga: "Allsvenskan (Suécia )", logo: "https://i.imgur.com/sMABg6f.png", horario: "10:00", partida: "Malmö FF x AIK", analise: "Malmö é o time mais forte do país e dominante em seus domínios. O gol é uma questão de tempo.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "16:00", partida: "Vasco da Gama x Atlético-MG", analise: "Clássico com dois bons ataques. A chance de ambos os times buscarem o gol desde o início é grande.", over_ht: 2, over_ft: 3 },
+                { liga: "MLS (EUA )", logo: "https://i.imgur.com/S0g4a2v.png", horario: "21:00", partida: "New York City FC x Atlanta United", analise: "Jogo típico da MLS, com defesas que dão espaço e ataques que aproveitam.", over_ht: 2, over_ft: 3 },
+                { liga: "Premiership (Escócia )", logo: "https://i.imgur.com/y8j5ZgY.png", horario: "12:00", partida: "Hearts x Rangers", analise: "Rangers precisa vencer fora para não deixar o Celtic escapar. Qualidade para marcar.", over_ht: 1, over_ft: 3 },
+                { liga: "Superliga (Argentina )", logo: "https://i.imgur.com/NqfJ2gK.png", horario: "18:00", partida: "Boca Juniors x Defensa y Justicia", analise: "Boca na Bombonera costuma marcar. Defensa y Justicia não se limita a defender.", over_ht: 1, over_ft: 3 },
+                { liga: "Eliteserien (Noruega )", logo: "https://i.imgur.com/J3hW8vG.png", horario: "12:00", partida: "Viking x Rosenborg", analise: "Clássico norueguês. Viking muito forte em casa, Rosenborg tradicionalmente ofensivo.", over_ht: 2, over_ft: 3 },
+                { liga: "Championship (Inglaterra )", logo: "https://i.imgur.com/v03A4kS.png", horario: "11:00", partida: "Leeds United x West Brom", analise: "Leeds em Elland Road é sempre intenso. West Brom tem um bom contra-ataque.", over_ht: 1, over_ft: 3 },
+                { liga: "2. Bundesliga (Alemanha )", logo: "https://i.imgur.com/mGZ03b1.png", horario: "08:30", partida: "Kaiserslautern x Paderborn", analise: "Paderborn é um dos times mais ofensivos da liga. Kaiserslautern tem uma torcida fanática.", over_ht: 2, over_ft: 3 },
+                { liga: "Super League (Suíça )", logo: "https://i.imgur.com/rO9eY5E.png", horario: "11:30", partida: "FC Basel x Servette", analise: "Clássico suíço. Basel precisa vencer em casa. Liga com alta média de gols.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "16:00", partida: "Corinthians x Athletico-PR", analise: "Corinthians precisa vencer em casa. Athletico-PR é um visitante muito perigoso.", over_ht: 1, over_ft: 2 },
+                { liga: "Brasileirão Série B", logo: "https://i.imgur.com/CMp5aA2.png", horario: "16:00", partida: "América-MG x Avaí", analise: "América-MG é um dos favoritos ao acesso e muito forte no Independência.", over_ht: 2, over_ft: 3 },
+                { liga: "Ligue 1 (França )", logo: "https://i.imgur.com/nJz15rA.png", horario: "15:45", partida: "Marseille x Brest", analise: "Marseille no Vélodrome é sempre forte. Brest é um time que costuma sofrer gols fora.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série A", logo: "https://i.imgur.com/rJ1b4tJ.png", horario: "18:30", partida: "Cruzeiro x Santos", analise: "Cruzeiro em boa fase no Mineirão. Vantagem para o mandante, que deve buscar o gol.", over_ht: 1, over_ft: 3 },
+                { liga: "Liga MX (México )", logo: "https://i.imgur.com/PzL5vAN.png", horario: "21:00", partida: "Monterrey x Cruz Azul", analise: "Dois dos times mais ricos e ofensivos do México. Potencial de jogaço.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série B", logo: "https://i.imgur.com/CMp5aA2.png", horario: "18:30", partida: "Vila Nova x Chapecoense", analise: "Vila Nova forte em casa contra uma Chapecoense que luta na parte de baixo.", over_ht: 1, over_ft: 2 },
+                { liga: "MLS (EUA )", logo: "https://i.imgur.com/S0g4a2v.png", horario: "20:30", partida: "Orlando City x Philadelphia Union", analise: "Confronto equilibrado na MLS, mas com tendência a gols pelo estilo de jogo de ambos.", over_ht: 1, over_ft: 3 },
+                { liga: "Superliga (Argentina )", logo: "https://i.imgur.com/NqfJ2gK.png", horario: "15:30", partida: "San Lorenzo x Lanús", analise: "San Lorenzo é forte defensivamente, mas o Lanús tem um bom ataque. O gol pode sair.", over_ht: 1, over_ft: 2 },
+                { liga: "Championship (Inglaterra )", logo: "https://i.imgur.com/v03A4kS.png", horario: "11:00", partida: "Sunderland x QPR", analise: "Sunderland tem uma torcida apaixonada que empurra o time. QPR é um visitante irregular.", over_ht: 1, over_ft: 3 },
+                { liga: "2. Bundesliga (Alemanha )", logo: "https://i.imgur.com/mGZ03b1.png", horario: "08:30", partida: "Nürnberg x Hannover 96", analise: "Mais um jogo da segunda divisão alemã com alto potencial de gols.", over_ht: 2, over_ft: 3 },
+                { liga: "Pro League (Bélgica )", logo: "https://i.imgur.com/OUMv3bL.png", horario: "11:00", partida: "Royal Antwerp x Kortrijk", analise: "Antwerp, time de ponta, joga em casa contra um adversário mais fraco.", over_ht: 2, over_ft: 3 },
+                { liga: "Super League (Suíça)", logo: "https://i.imgur.com/rO9eY5E.png", horario: "11:30", partida: "Lausanne-Sport x St. Gallen", analise: "St. Gallen tem um dos ataques mais potentes da Suíça. Lausanne, em casa, também marca.", over_ht: 2, over_ft: 3 },
+                { liga: "Superliga (Dinamarca )", logo: "https://i.imgur.com/xXQ8x1B.png", horario: "11:00", partida: "Viborg x Randers", analise: "Confronto de meio de tabela na Dinamarca. Jogos assim costumam ser mais abertos.", over_ht: 1, over_ft: 3 },
+                { liga: "Allsvenskan (Suécia )", logo: "https://i.imgur.com/sMABg6f.png", horario: "12:30", partida: "Häcken x Kalmar", analise: "Häcken é uma força ofensiva na Suécia, especialmente em casa.", over_ht: 2, over_ft: 3 },
+                { liga: "Brasileirão Série C", logo: "https://i.imgur.com/fT23b3H.png", horario: "19:00", partida: "Botafogo-PB x São Bernardo", analise: "Jogo decisivo na Série C. A necessidade da vitória pode forçar os times ao ataque.", over_ht: 1, over_ft: 2 },
+                { liga: "Brasileirão Série B", logo: "https://i.imgur.com/CMp5aA2.png", horario: "11:00", partida: "Brusque x Mirassol", analise: "Dois times que jogam para frente na Série B. Potencial para um jogo com gols.", over_ht: 1, over_ft: 3 },
+                { liga: "MLS (EUA )", logo: "https://i.imgur.com/S0g4a2v.png", horario: "22:30", partida: "LA Galaxy x Vancouver Whitecaps", analise: "LA Galaxy em casa é sinônimo de gols. A MLS raramente decepciona neste mercado.", over_ht: 2, over_ft: 3 },
+                { liga: "Liga MX (México )", logo: "https://i.imgur.com/PzL5vAN.png", horario: "19:00", partida: "Toluca x Pachuca", analise: "Toluca em casa joga de forma muito ofensiva. Pachuca tem qualidade para marcar também.", over_ht: 2, over_ft: 3 },
+                { liga: "Superliga (Argentina )", logo: "https://i.imgur.com/NqfJ2gK.png", horario: "13:00", partida: "Estudiantes x Unión Santa Fe", analise: "Estudiantes é forte em casa e deve pressionar desde o início para buscar a vitória.", over_ht: 1, over_ft: 2 }
+            ]
+        };
+
+        // Função para gerar o rating com estrelas
+        function gerarRating(valor ) {
+            let estrelas = '';
+            for (let i = 0; i < 3; i++) {
+                estrelas += i < valor ? '<span class="star">★</span>' : '<span class="empty-star">★</span>';
+            }
+            return `<div class="rating">${estrelas}</div>`;
+        }
+
+        // Função para gerar o HTML da tabela
+        function gerarTabela(dia) {
+            const dadosDoDia = jogos[dia];
+            // Ordena os jogos pela maior pontuação de Over 0.5 HT
+            dadosDoDia.sort((a, b) => b.over_ht - a.over_ht || b.over_ft - a.over_ft);
+            
+            let html = '<table><thead><tr><th>Liga</th><th>Partida e Horário</th><th>Análise Focada</th><th>Potencial Over 0.5 HT</th><th>Potencial Over 0.5 FT</th></tr></thead><tbody>';
+            
+            dadosDoDia.forEach(jogo => {
+                html += `
+                    <tr>
+                        <td>
+                            <div class="league-info">
+                                <img src="${jogo.logo}" alt="${jogo.liga}" class="league-logo">
+                                <span>${jogo.liga}</span>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="match-teams">${jogo.partida}</div>
+                            <span class="match-time">${jogo.horario} (Horário de Brasília)</span>
+                        </td>
+                        <td class="analysis">${jogo.analise}</td>
+                        <td>${gerarRating(jogo.over_ht)}</td>
+                        <td>${gerarRating(jogo.over_ft)}</td>
+                    </tr>
+                `;
+            });
+
+            html += '</tbody></table>';
+            return html;
+        }
+
+        // Função para controlar a troca de abas
+        function showTab(dia) {
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            const buttons = document.querySelectorAll('.tab-button');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            document.getElementById(dia).classList.add('active');
+            document.querySelector(`button[onclick="showTab('${dia}')"]`).classList.add('active');
+        }
+
+        // Inicializa as tabelas
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('sabado').innerHTML = gerarTabela('sabado');
+            document.getElementById('domingo').innerHTML = gerarTabela('domingo');
+        });
+    </script>
+
+</body>
+</html>
+
